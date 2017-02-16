@@ -4,7 +4,7 @@ A simple morse converter for raspberry with python.
 ##If you want to learn more code here is a guide
 
 ![morse](https://cloud.githubusercontent.com/assets/24460427/23035977/67b1c0d6-f481-11e6-996e-9fe06cb4899d.png)
-###sorce --> http://www.learnmorsecode.com/
+###source --> http://www.learnmorsecode.com/
 
 ###Raspberry setup. In this setup i use pin 18 to connect to raspberry-->
 
