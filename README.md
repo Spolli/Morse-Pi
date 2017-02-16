@@ -7,6 +7,6 @@ A simple morse converter for raspberry with python.
 ###source --> http://www.learnmorsecode.com/
 
 #Raspberry setup 
-##In this setup i use pin 18 to connect to raspberry-->
+##In this setup i use pin 18 to connect to raspberry
 
 ###![schemamorse](https://cloud.githubusercontent.com/assets/24460427/23035903/0d79c1e0-f481-11e6-9187-1e4905bd01c4.jpg)
