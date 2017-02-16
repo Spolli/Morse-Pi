@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import sys
 
+#A dictionary to converto from human alphabet to morse alphabet
 MORSE = {
 	' ': ' ',
         "'": '.----.',
@@ -52,40 +53,41 @@ MORSE = {
         'Z': '--..',
         '_': '..--.-'}
 
+#set pin to output
 nPin = 18
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(nPin, GPIO.OUT)
 GPIO.setwarnings(False)
-#GPIO.cleanup()
 
-def punto():
+
+def dot():
 	GPIO.output(nPin, 1)
 	time.sleep(0.2)
 	GPIO.output(nPin, 0)
 	time.sleep(0.2)
 
-def meno():
+def dash():
 	GPIO.output(nPin, 1)
 	time.sleep(0.5)
 	GPIO.output(nPin, 0)
 	time.sleep(0.2)
 
-continua = 'y'
-while(continua == 'y'):
-	frase = input('Inserire la stringa da convertire: ')
+continue = 'y'
+while(continue == 'y'):
+	frase = input('Insert the string to convert: ')
 	frase = frase.upper()
 	print("\t\tASCII\t|\tMORSE")
 	for c in frase:
 		if c not in MORSE:
-			sys.exit("Input non Valido !")
+			sys.exit("Invalid input!")
 	for lettera in frase:
-		print("Carattere:\t", lettera, "\t|\t", MORSE[lettera])
+		print("Carattere:\t", lettera, "\t|\t", MORSE[lettera])		#convert the string to morse code
 		for simbolo in MORSE[lettera]:
 			if simbolo == '-':
-				meno()
+				dash()
 			elif simbolo == '.':
-				punto()
+				dot()
 			else:
 				time.sleep(0.5)
 		time.sleep(0.5)
-        continua = input("Vuoi continuare ? y/n: ")
+        continue = input("Do you want to continue? y/n: ")
